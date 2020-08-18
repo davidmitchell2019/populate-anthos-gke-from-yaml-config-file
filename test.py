@@ -11,8 +11,8 @@ destFile = None
 def init():
     global sourceFile, destFile
     
-    file1 = open(r'test.yml')
-    file2 = open(r'test2.yml')
+    file1 = open(r'dummy-anthos.yml')
+    file2 = open(r'dummy-config.yml')
     
     destFile = yaml.load(file1, Loader=yaml.FullLoader)
     sourceFile = yaml.load(file2, Loader=yaml.FullLoader)
@@ -34,7 +34,7 @@ def main():
     #substitute the values
     destFile = replace_level(destFile)
     #dump the yaml file
-    result = yaml.safe_dump(destFile, open(r'out.yml', 'w'), default_flow_style=False)
+    result = yaml.safe_dump(destFile, open(r'anthos-gke.yml', 'w'), default_flow_style=False)
     #print the result to the terminal
     print(result)
 
