@@ -1,0 +1,25 @@
+kind: AWSManagementService
+metadata:
+  name: management
+spec:
+  authentication:
+    awsIAM:
+      adminIdentityARNs:
+      - null
+  databaseEncryption:
+    kmsKeyARN: null
+  existingVPC:
+    allowedSSHSecurityGroupIDs:
+    - 1something
+    - 2something
+    - 3something
+    subnetID: some-subnet-id
+  googleCloud:
+    projectID: testing-gcloud
+    serviceAccountKeys:
+      connectAgent: null
+      managementService: ./here
+      node: null
+  kmsKeyARN: null
+  region: null
+  version: null

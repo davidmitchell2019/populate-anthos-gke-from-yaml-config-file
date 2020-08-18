@@ -1,0 +1,7 @@
+subnetID: some-subnet-id
+allowedSSHSecurityGroupIDs:
+  - 1something
+  - 2something
+  - 3something
+projectID: testing-gcloud
+managementService: ./here
