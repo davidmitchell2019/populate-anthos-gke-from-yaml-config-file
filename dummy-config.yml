@@ -4,3 +4,4 @@ allowedSSHSecurityGroupIDs:
   - id2
   - id3
 projectID: somenewproject
+SomeThingNew: shouldNotBeAdded
