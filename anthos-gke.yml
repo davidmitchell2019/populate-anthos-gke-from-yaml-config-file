@@ -10,8 +10,8 @@ spec:
     kmsKeyARN: null
   existingVPC:
     allowedSSHSecurityGroupIDs:
-    - id10
-    - id2
+    - id12
+    - id5
     - id3
     subnetID: some-new-subnet-id
   googleCloud:

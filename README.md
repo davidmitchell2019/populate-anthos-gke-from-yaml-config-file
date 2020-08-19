@@ -1,9 +1,9 @@
 Takes 3 system arguments:
 
-- config file
-- template file
-- output file
+--configFile
+--templateFile
+--outputFile
 
 can be called by:
 
-python merge-config-with-template.py  config.yml template.yml anthos-gke.yml
+python merge-config-with-template.py  --configFile="config.yml" --templateFile="template.yml" --outputFile"anthos-gke.yml"
