@@ -11,7 +11,7 @@ destFile = None
 def init():
     global sourceFile, destFile
     
-    file1 = open(r'dummy-gke.yml')
+    file1 = open(r'dummy-anthos.yml')
     file2 = open(r'dummy-config.yml')
     
     destFile = yaml.load(file1, Loader=yaml.FullLoader)
