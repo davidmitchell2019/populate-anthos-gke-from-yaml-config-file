@@ -32,7 +32,7 @@ def init():
 
 def replace_value(file):
     for key in file:
-        #fix for multiple keys with same name
+        #fix for multiple kms key arn keys, assign statice to databaseencrypt
         if key == "databaseEncryption" and source_file[key]:
             file[key] = source_file[key]
         #####################################
