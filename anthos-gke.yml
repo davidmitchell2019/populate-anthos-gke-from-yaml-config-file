@@ -10,15 +10,15 @@ spec:
     kmsKeyARN: null
   existingVPC:
     allowedSSHSecurityGroupIDs:
-    - 1something
-    - 2something
-    - 3something
+    - id1
+    - id2
+    - id3
     subnetID: some-new-subnet-id
   googleCloud:
-    projectID: testing-gcloud
+    projectID: someproject-id
     serviceAccountKeys:
       connectAgent: null
-      managementService: ./here
+      managementService: null
       node: null
   kmsKeyARN: null
   region: null
