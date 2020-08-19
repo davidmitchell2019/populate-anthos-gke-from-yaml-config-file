@@ -3,8 +3,8 @@ import argparse
 import yaml
 #TODO add some error handling
 
-sourceFile = None
-destFile = None
+source_file = None
+dest_file = None
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--configFile', required=True)
@@ -21,28 +21,28 @@ print(template)
 print(output)
 
 def init():
-    global sourceFile, destFile, config, template
+    global source_file, dest_file, config, template
 
     file1 = open(template, 'r')
     file2 = open(config, 'r')
 
-    destFile = yaml.load(file1, Loader=yaml.FullLoader)
-    sourceFile = yaml.load(file2, Loader=yaml.FullLoader)
+    dest_file = yaml.load(file1, Loader=yaml.FullLoader)
+    source_file = yaml.load(file2, Loader=yaml.FullLoader)
 
 def replace_value(file):
     for key in file:
         if isinstance(file[key], dict):
             file[key] = replace_value(file[key])
-        elif key in sourceFile:
-            file[key] = sourceFile[key]
+        elif key in source_file:
+            file[key] = source_file[key]
     return file
 
 
 def main():
-    global destFile, output
+    global dest_file, output
     init()
-    destFile = replace_value(destFile)
-    result = yaml.safe_dump(destFile, open(output, 'w'), default_flow_style=False)
+    dest_file = replace_value(dest_file)
+    result = yaml.safe_dump(dest_file, open(output, 'w'), default_flow_style=False)
     print(result)
 
 main()

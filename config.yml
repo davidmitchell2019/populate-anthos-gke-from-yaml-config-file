@@ -3,5 +3,9 @@ allowedSSHSecurityGroupIDs:
   - id12
   - id5
   - id3
-projectID: anotherPID
+projectID: somethingnew
 SomeThingNew: shouldNotBeAdded
+adminIdentityARNs:
+  - something
+  - somethingelse
+

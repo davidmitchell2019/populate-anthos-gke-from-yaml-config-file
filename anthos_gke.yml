@@ -5,7 +5,8 @@ spec:
   authentication:
     awsIAM:
       adminIdentityARNs:
-      - null
+      - something
+      - somethingelse
   databaseEncryption:
     kmsKeyARN: null
   existingVPC:
@@ -15,7 +16,7 @@ spec:
     - id3
     subnetID: some-new-subnet-id
   googleCloud:
-    projectID: anotherPID
+    projectID: somethingnew
     serviceAccountKeys:
       connectAgent: null
       managementService: null
