@@ -1,7 +1,7 @@
 subnetID: some-new-subnet-id
 allowedSSHSecurityGroupIDs:
-  - id1
+  - id10
   - id2
   - id3
-projectID: somenewproject
+projectID: anotherPID
 SomeThingNew: shouldNotBeAdded

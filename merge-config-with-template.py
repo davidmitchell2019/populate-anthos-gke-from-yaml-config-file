@@ -1,3 +1,5 @@
+import sys
+
 import yaml
 #TODO add some error handling
 
@@ -8,8 +10,8 @@ destFile = None
 def init():
     global sourceFile, destFile
     
-    file1 = open(r'dummy-anthos.yml')
-    file2 = open(r'dummy-config.yml')
+    file1 = open(sys.argv[2], 'r')
+    file2 = open(sys.argv[1], 'r')
     
     destFile = yaml.load(file1, Loader=yaml.FullLoader)
     sourceFile = yaml.load(file2, Loader=yaml.FullLoader)
@@ -27,7 +29,7 @@ def main():
     global destFile
     init()
     destFile = replace_value(destFile)
-    result = yaml.safe_dump(destFile, open(r'anthos-gke.yml', 'w'), default_flow_style=False)
+    result = yaml.safe_dump(destFile, open(sys.argv[3], 'w'), default_flow_style=False)
     print(result)
 
 main()
