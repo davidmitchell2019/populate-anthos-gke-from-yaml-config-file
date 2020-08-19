@@ -3,9 +3,13 @@ allowedSSHSecurityGroupIDs:
   - id12
   - id5
   - id3
-projectID: somethingnew
+projectID: somethingnewer
 SomeThingNew: shouldNotBeAdded
 adminIdentityARNs:
   - something
   - somethingelse
-
+somethingElse:
+  somethingElse:value
+kmsKeyARN: test6
+databaseEncryption:
+    kmsKeyARN: test3

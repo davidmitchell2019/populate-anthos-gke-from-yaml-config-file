@@ -16,6 +16,7 @@ config = args.configFile
 template = args.templateFile
 output = args.outputFile
 
+
 print(config)
 print(template)
 print(output)
@@ -31,12 +32,13 @@ def init():
 
 def replace_value(file):
     for key in file:
-        if isinstance(file[key], dict):
+        if key == "databaseEncryption" and source_file[key]:
+            file[key] = source_file[key]
+        elif isinstance(file[key], dict):
             file[key] = replace_value(file[key])
         elif key in source_file:
             file[key] = source_file[key]
     return file
-
 
 def main():
     global dest_file, output

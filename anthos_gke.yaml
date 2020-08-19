@@ -8,7 +8,7 @@ spec:
       - something
       - somethingelse
   databaseEncryption:
-    kmsKeyARN: null
+    kmsKeyARN: test3
   existingVPC:
     allowedSSHSecurityGroupIDs:
     - id12
@@ -16,11 +16,11 @@ spec:
     - id3
     subnetID: some-new-subnet-id
   googleCloud:
-    projectID: somethingnew
+    projectID: somethingnewer
     serviceAccountKeys:
       connectAgent: null
       managementService: null
       node: null
-  kmsKeyARN: null
+  kmsKeyARN: test6
   region: null
   version: null
