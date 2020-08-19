@@ -3,4 +3,4 @@ allowedSSHSecurityGroupIDs:
   - id1
   - id2
   - id3
-projectID: someproject-id
+projectID: somenewproject

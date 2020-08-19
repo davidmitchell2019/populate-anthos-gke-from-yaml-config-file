@@ -1,13 +1,10 @@
-import json
-from jinja2 import Template
 import yaml
-from json import dumps
+#TODO add some error handling
 
 sourceFile = None
 destFile = None
-#TODO add some error handling
 
-#initialize the files and and take them in as dictionaries
+
 def init():
     global sourceFile, destFile
     
@@ -17,9 +14,7 @@ def init():
     destFile = yaml.load(file1, Loader=yaml.FullLoader)
     sourceFile = yaml.load(file2, Loader=yaml.FullLoader)
 
-# reading a level of the destination file for keys and sub dictionaries
 def replace_value(file):
-    #print(level)
     for key in file:
         if isinstance(file[key], dict):
             file[key] = replace_value(file[key])
@@ -31,11 +26,8 @@ def replace_value(file):
 def main():
     global destFile
     init()
-    #substitute the values
     destFile = replace_value(destFile)
-    #dump the yaml file
     result = yaml.safe_dump(destFile, open(r'anthos-gke.yml', 'w'), default_flow_style=False)
-    #print the result to the terminal
     print(result)
 
 main()
