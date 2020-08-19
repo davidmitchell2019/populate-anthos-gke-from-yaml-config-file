@@ -18,11 +18,11 @@ def init():
     sourceFile = yaml.load(file2, Loader=yaml.FullLoader)
 
 # reading a level of the destination file for keys and sub dictionaries
-def replace_level(file):
+def replace_value(file):
     #print(level)
     for key in file:
         if isinstance(file[key], dict):
-            file[key] = replace_level(file[key])
+            file[key] = replace_value(file[key])
         elif key in sourceFile:
             file[key] = sourceFile[key]
     return file
@@ -32,7 +32,7 @@ def main():
     global destFile
     init()
     #substitute the values
-    destFile = replace_level(destFile)
+    destFile = replace_value(destFile)
     #dump the yaml file
     result = yaml.safe_dump(destFile, open(r'anthos-gke.yml', 'w'), default_flow_style=False)
     #print the result to the terminal
