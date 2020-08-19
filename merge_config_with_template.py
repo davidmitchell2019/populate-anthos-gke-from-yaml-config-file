@@ -32,8 +32,10 @@ def init():
 
 def replace_value(file):
     for key in file:
+        #fix for multiple keys with same name
         if key == "databaseEncryption" and source_file[key]:
             file[key] = source_file[key]
+        #####################################
         elif isinstance(file[key], dict):
             file[key] = replace_value(file[key])
         elif key in source_file:
