@@ -11,21 +11,21 @@ destFile = None
 def init():
     global sourceFile, destFile
     
-    file1 = open(r'dummy-anthos.yml')
+    file1 = open(r'dummy-gke.yml')
     file2 = open(r'dummy-config.yml')
     
     destFile = yaml.load(file1, Loader=yaml.FullLoader)
     sourceFile = yaml.load(file2, Loader=yaml.FullLoader)
 
 # reading a level of the destination file for keys and sub dictionaries
-def replace_level(level):
-    #Iterate through the dictionaries and compare the keys
-    for key in level:
-        if isinstance(level[key], dict):
-            level[key] = replace_level(level[key])
+def replace_level(file):
+    #print(level)
+    for key in file:
+        if isinstance(file[key], dict):
+            file[key] = replace_level(file[key])
         elif key in sourceFile:
-            level[key] = sourceFile[key]
-    return level
+            file[key] = sourceFile[key]
+    return file
 
 
 def main():

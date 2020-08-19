@@ -1,0 +1,23 @@
+kind: AWSManagementService
+metadata:
+  name: management
+spec:
+  version:
+  region:
+  authentication:
+    awsIAM:
+      adminIdentityARNs:
+        -
+  kmsKeyARN:
+  databaseEncryption:
+    kmsKeyARN:
+  googleCloud:
+    projectID:
+    serviceAccountKeys:
+      managementService:
+      connectAgent:
+      node:
+  existingVPC:
+    subnetID:
+    allowedSSHSecurityGroupIDs:
+      -

@@ -13,7 +13,7 @@ spec:
     - 1something
     - 2something
     - 3something
-    subnetID: some-subnet-id
+    subnetID: some-new-subnet-id
   googleCloud:
     projectID: testing-gcloud
     serviceAccountKeys:
